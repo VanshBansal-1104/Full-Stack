@@ -1,0 +1,11 @@
+config:
+  target: 'http://fullstack-alb-123456.us-east-1.elb.amazonaws.com'
+  phases:
+    - duration: 60
+      arrivalRate: 10
+
+scenarios:
+  - name: 'Health Check'
+    flow:
+      - get:
+          url: '/health'
